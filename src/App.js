@@ -43,6 +43,7 @@ export default class App extends React.Component {
         if (e.target.value === "Search (default)") {
             return this.getData();
         }
+        
         const res = await axios.get(`https://covid19.mathdro.id/api/countries/${e.target.value}`);
         this.setState({
             confirmed: res.data.confirmed.value,
